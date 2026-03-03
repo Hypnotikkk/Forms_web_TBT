@@ -158,6 +158,15 @@ h2 {
   margin: 0;
   cursor: pointer;
   touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+}
+
+#insurance-overlay button:active,
+#insurance-overlay button:focus,
+#insurance-overlay button:focus-visible {
+  background: transparent;
+  outline: none;
 }
 
 .signature-zone {
