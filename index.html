@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Experience Magique</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="experience is-entry-locked" aria-live="polite">
+      <section class="scene" id="scene-insurance" aria-labelledby="insurance-title">
+        <div class="document">
+          <p class="kicker">Police d'Assurance Magique</p>
+          <h1 id="insurance-title">Contrat de Protection des Miracles</h1>
+
+          <p class="contract-copy">
+            Par le présent document, il est certifié que The Belgian Touch, spécialiste des expériences magiques digitales et immersives, est couvert contre tout événement jugé improbable, inexplicable ou techniquement impossible lors de ses performances.
+          </p>
+
+          <p class="contract-copy">La garantie inclut notamment :</p>
+          <ul class="contract-list">
+            <li>Apparitions et disparitions d’objets</li>
+            <li>Révélations anticipées et prédictions exactes</li>
+            <li>Manipulations du temps perçu</li>
+            <li>Réactions excessives d’émerveillement collectif</li>
+          </ul>
+
+          <p class="contract-copy">
+            Toute situation considérée comme « irréaliste » par un spectateur sera reconnue comme intentionnellement orchestrée dans le cadre artistique de la performance.
+          </p>
+
+          <p class="contract-copy">
+            Ce contrat est valable pour toute prestation où l’impossible devient possible.
+          </p>
+
+          <p class="contract-meta">
+            Date d’effet : Immédiate<br />
+            Validité : Tant que la magie opère
+          </p>
+
+          <div id="insurance-overlay" aria-label="Selection de carte">
+            <button type="button" data-card="BC1.png" data-card-width="38%" aria-label="Carte bleue"></button>
+            <button type="button" data-card="RC1.png" data-card-width="38%" aria-label="Carte rouge"></button>
+            <button type="button" data-card="CARDTBT1.png" data-card-width="65%" aria-label="Carte branding"></button>
+            <button type="button" data-card="BC1.png" data-card-width="42%" data-card-rotate="90" aria-label="Carte signature"></button>
+          </div>
+
+          <div class="signature-zone" aria-label="Zone de signature">
+            <p class="signature-label">Signature</p>
+            <canvas id="signature-pad" aria-label="Signer ici"></canvas>
+            <div class="signature-actions">
+              <button type="button" id="signature-clear" class="btn btn-ghost">Effacer</button>
+            </div>
+          </div>
+
+          <div class="card-scene" aria-label="Carte selectionnee">
+            <div id="card-stage">
+              <img id="selected-card" src="BC1.png" alt="Carte selectionnee" draggable="false" aria-hidden="true" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="scene" id="scene-review" aria-labelledby="review-title">
+        <div class="review-scene">
+          <h2 id="review-title">Avis</h2>
+          <p class="lead">Appuie sur une étoile pour nous laisser une note !</p>
+
+          <div class="review-stars" id="review-stars" role="group" aria-label="Choix de note">
+            <button type="button" class="star-btn" data-rating="1" aria-label="1 étoile">★</button>
+            <button type="button" class="star-btn" data-rating="2" aria-label="2 étoiles">★</button>
+            <button type="button" class="star-btn" data-rating="3" aria-label="3 étoiles">★</button>
+            <button type="button" class="star-btn" data-rating="4" aria-label="4 étoiles">★</button>
+            <button type="button" class="star-btn" data-rating="5" aria-label="5 étoiles">★</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
