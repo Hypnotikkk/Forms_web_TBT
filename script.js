@@ -98,10 +98,10 @@ function handleInsuranceSelection(event) {
 function isCardOutOfViewport() {
   const rect = selectedCard.getBoundingClientRect();
   return (
-    rect.right < -EXIT_THRESHOLD ||
-    rect.bottom < -EXIT_THRESHOLD ||
-    rect.left > window.innerWidth + EXIT_THRESHOLD ||
-    rect.top > window.innerHeight + EXIT_THRESHOLD
+    rect.left < -EXIT_THRESHOLD ||
+    rect.top < -EXIT_THRESHOLD ||
+    rect.right > window.innerWidth + EXIT_THRESHOLD ||
+    rect.bottom > window.innerHeight + EXIT_THRESHOLD
   );
 }
 
