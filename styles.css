@@ -24,19 +24,6 @@ body {
   font-family: "Public Sans", "Segoe UI", sans-serif;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 2;
-  opacity: 0.3;
-  background-image: var(--logo-watermark);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: min(60vw, 920px);
-}
-
 .experience {
   position: relative;
   z-index: 1;
@@ -47,6 +34,19 @@ body::before {
   scroll-behavior: smooth;
   background: var(--bg);
   -webkit-overflow-scrolling: touch;
+}
+
+.experience::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 30;
+  opacity: 0.3;
+  background-image: var(--logo-watermark);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: min(60vw, 920px);
 }
 
 .experience.is-entry-locked {
@@ -326,7 +326,7 @@ h2 {
 }
 
 @media (max-width: 860px) {
-  body::before {
+  .experience::before {
     background-size: min(86vw, 560px);
   }
 
