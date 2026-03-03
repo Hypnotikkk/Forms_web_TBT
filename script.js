@@ -2,7 +2,6 @@ const insuranceOverlay = document.getElementById("insurance-overlay");
 const cardStage = document.getElementById("card-stage");
 const selectedCard = document.getElementById("selected-card");
 const signaturePad = document.getElementById("signature-pad");
-const signatureClear = document.getElementById("signature-clear");
 const experienceRoot = document.querySelector(".experience");
 
 const reviewStars = document.getElementById("review-stars");
@@ -170,7 +169,6 @@ function scheduleCardReveal() {
 function setSignatureLocked(isLocked) {
   signatureLocked = isLocked;
   signaturePad.classList.toggle("is-locked", isLocked);
-  signatureClear.disabled = isLocked;
 }
 
 function setupSignatureContext() {
@@ -198,15 +196,6 @@ function setupSignatureContext() {
     };
     image.src = previousSignature;
   }
-}
-
-function clearSignature() {
-  if (!signatureContext) return;
-  signatureContext.clearRect(0, 0, signaturePad.width, signaturePad.height);
-  clearCardRevealTimer();
-  cardRevealReady = false;
-  signatureReady = false;
-  applyPickedCardToScene();
 }
 
 function signaturePoint(event) {
@@ -256,7 +245,7 @@ function onSignaturePointerUp(event) {
 }
 
 function setupSignaturePad() {
-  if (!signaturePad || !signatureClear) return;
+  if (!signaturePad) return;
 
   setupSignatureContext();
   setSignatureLocked(true);
@@ -265,7 +254,6 @@ function setupSignaturePad() {
   signaturePad.addEventListener("pointermove", onSignaturePointerMove);
   signaturePad.addEventListener("pointerup", onSignaturePointerUp);
   signaturePad.addEventListener("pointercancel", onSignaturePointerUp);
-  signatureClear.addEventListener("click", clearSignature);
 }
 
 insuranceOverlay.addEventListener("click", handleInsuranceSelection);
